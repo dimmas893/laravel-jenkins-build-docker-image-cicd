@@ -1,0 +1,8 @@
+
+docker build -f Docker/dockerfile/web_server.Dockerfile -t web_server .
+docker pull sebelumcahaya/laravel-prod-demo-web_server:prod
+docker push sebelumcahaya/laravel-prod-demo-web_server:prod
+
+docker build -f Docker/dockerfile/app.Dockerfile -t app .
+docker tag app sebelumcahaya/laravel-prod-demo-app:prod
+docker push sebelumcahaya/laravel-prod-demo-app:prod
